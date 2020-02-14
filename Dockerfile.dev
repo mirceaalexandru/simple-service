@@ -1,0 +1,9 @@
+# Pulling nodejs base image
+FROM node:8.14.0-alpine
+
+RUN apk --no-cache add git make python curl
+WORKDIR /app
+
+RUN npm install -g nodemon
+
+CMD [ "npm", "run", "start-dev" ]
